@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -66,6 +68,20 @@ public class ApiController {
     @GetMapping("/")
     public String goIndex() {
         return "index.html";
+    }
+
+    @GetMapping("/aoptest/{id}")
+    public String aoptest(@PathVariable Long id, @RequestParam String name) {
+        System.out.println("get mothod");
+        System.out.println("get mothod : " + id);
+        System.out.println("get mothod : " + name);
+        return id + " " + name;
+    }
+
+    @PostMapping("/aopost")
+    public TestDTO aopost(@RequestBody TestDTO testDTO) {
+        System.out.println("post mothod : " + testDTO);
+        return testDTO;
     }
 
 }

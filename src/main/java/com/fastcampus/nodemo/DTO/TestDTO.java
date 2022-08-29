@@ -2,6 +2,7 @@ package com.fastcampus.nodemo.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+//@JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestDTO {
 
     @JsonProperty("user_id")
@@ -11,7 +12,7 @@ public class TestDTO {
     private String userName;
 
     @JsonProperty("user_phone")
-    private int userPnum;
+    private String userPnum;
 
     @JsonProperty("user_email")
     private String userEmail;
@@ -32,11 +33,11 @@ public class TestDTO {
         this.userName = userName;
     }
 
-    public int getUserPnum() {
+    public String getUserPnum() {
         return this.userPnum;
     }
 
-    public void setUserPnum(int userPnum) {
+    public void setUserPnum(String userPnum) {
         this.userPnum = userPnum;
     }
 
