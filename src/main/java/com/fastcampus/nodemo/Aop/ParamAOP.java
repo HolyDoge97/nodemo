@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ParamAOP {
 
-    @Pointcut("excution(* com.fastcampus.nodemo.Controller..*.*(..))")
+    @Pointcut("execution(* com.fastcampus.nodemo.Controller..*.*(..))")
     private void cut() {
     }
 

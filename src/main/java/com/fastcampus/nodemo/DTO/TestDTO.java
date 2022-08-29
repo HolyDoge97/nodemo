@@ -49,10 +49,16 @@ public class TestDTO {
         this.userEmail = userEmail;
     }
 
+    // public String toString() {
+    // return "User ID : " + this.userID + "\n" +
+    // "User Name : " + this.userName + "\n" +
+    // "User Phone Number : " + this.userPnum + "\n" +
+    // "User Email : " + this.userEmail + "\n";
+    // }
+
+    @Override
     public String toString() {
-        return "User ID : " + this.userID + "\n" +
-                "User Name : " + this.userName + "\n" +
-                "User Phone Number : " + this.userPnum + "\n" +
-                "User Email : " + this.userEmail + "\n";
+        // TODO Auto-generated method stub
+        return super.toString();
     }
 }
