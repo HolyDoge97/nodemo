@@ -1,19 +1,25 @@
 package com.fastcampus.nodemo.DTO;
 
+import org.springframework.lang.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 //@JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestDTO {
 
+    @NonNull
     @JsonProperty("user_id")
     private String userID;
 
+    @NonNull
     @JsonProperty("user_name")
     private String userName;
 
+    @NonNull
     @JsonProperty("user_phone")
     private String userPnum;
 
+    @NonNull
     @JsonProperty("user_email")
     private String userEmail;
 
@@ -33,14 +39,6 @@ public class TestDTO {
         this.userName = userName;
     }
 
-    public String getUserPnum() {
-        return this.userPnum;
-    }
-
-    public void setUserPnum(String userPnum) {
-        this.userPnum = userPnum;
-    }
-
     public String getUserEmail() {
         return this.userEmail;
     }
@@ -49,16 +47,11 @@ public class TestDTO {
         this.userEmail = userEmail;
     }
 
-    // public String toString() {
-    // return "User ID : " + this.userID + "\n" +
-    // "User Name : " + this.userName + "\n" +
-    // "User Phone Number : " + this.userPnum + "\n" +
-    // "User Email : " + this.userEmail + "\n";
-    // }
-
-    @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        return "User ID : " + this.userID + "\n" +
+                "User Name : " + this.userName + "\n" +
+                "User Phone Number : " + this.userPnum + "\n" +
+                "User Email : " + this.userEmail + "\n";
     }
+
 }

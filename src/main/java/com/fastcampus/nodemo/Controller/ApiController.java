@@ -65,23 +65,32 @@ public class ApiController {
 
     }
 
-    @GetMapping("/")
-    public String goIndex() {
-        return "index.html";
-    }
-
     @GetMapping("/aoptest/{id}")
     public String aoptest(@PathVariable Long id, @RequestParam String name) {
-        System.out.println("get mothod");
-        System.out.println("get mothod : " + id);
-        System.out.println("get mothod : " + name);
+        System.out.println("get method");
+        System.out.println("get method : " + id);
+        System.out.println("get method : " + name);
         return id + " " + name;
     }
 
     @PostMapping("/aopost")
     public TestDTO aopost(@RequestBody TestDTO testDTO) {
-        System.out.println("post mothod : " + testDTO);
+        System.out.println("aopost IN");
+        System.out.println("post method : " + testDTO.toString());
         return testDTO;
+    }
+
+    @PostMapping("/tf")
+    public Boolean checkout(@RequestBody TestDTO testDTO) {
+        boolean result;
+        System.out.println("User ID : " + testDTO.getUserID());
+        if (testDTO.getUserID().equals("shjo03")) {
+            result = true;
+        } else {
+            result = false;
+        }
+        System.out.println(result);
+        return result;
     }
 
 }
