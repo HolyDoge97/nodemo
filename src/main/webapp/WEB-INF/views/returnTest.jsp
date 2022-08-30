@@ -62,7 +62,7 @@
           left: 68%;
           right: inherit;
           top: 30%;
-          bottom: 38%;
+          bottom: 34%;
           padding: 1%;
           margin: -20px;
         }
@@ -99,10 +99,17 @@
         }
         #footer{
           background-color: rgb(207, 255, 239);
-    height: 155px;
-    margin: -40px;
-    border-radius: 15px;
-    position: relative;
+          height: 155px;
+          margin: -40px;
+          border-radius: 15px;
+          position: relative;
+        }
+        #send_button{
+          font-size: 30px;
+          width: 300px;
+          height: 40px;
+          position: relative;
+          left: 65px;
         }
       </style>
     </head>
@@ -125,18 +132,20 @@
           "</select>" +
           '<p>URI&nbsp<input id="popURI" type="" name="URI" /></p>' +
           '<p>Body&nbsp<input id="popBody" type="text" name="Body" /></p>' +
-          '<input type="button" value="Send!" onclick="apiworker()" />' + //event,"URI에서 받은 내용","Body에서 받은 내용을 인자로 보내줘야함"
+          '<input id=send_button type="button" value="Send!" onclick="apiworker()" />' + //event,"URI에서 받은 내용","Body에서 받은 내용을 인자로 보내줘야함"
           "</form>" +
           "</div>";
-        $(event.target).parent().parent().append(tagPop);
+        $(event.target).parent().parent().parent().append(tagPop);
 
         // apiPop에서 받은 매개변수로, api를 호출해야하는데,, 그럴라면 select box가 하나 더 있고, 거기서 api를 골라 호출하는 방법을 사용해야할 것 같음
-        function callApi(event) {
-          $.ajax({
-            url: "/",
-          });
-        }
       }
+
+      function apiworker(event) {
+          // $.ajax({
+          //   url: "/",
+          // });
+          alert("공사중입니다");
+        }
     </script>
     <body style="background-color: rgb(82, 82, 82)" );>
       <h1 id="H1_bigger" style="position: absolute; top: -90px; left: 30px">
@@ -146,13 +155,8 @@
         <a href="/rtest">You're in ReturnTEST Page</a>
       </h3>
       <div class="API_Button">
-        <strong
-          ><input
-            type="button"
-            id="API_Button_1"
-            value="API TEST"
-            onclick="apiPop()"
-          />
+        <strong>
+          <input type="button" id="API_Button_1" value="API TEST" onclick="apiPop()" />
         </strong>
       </div>
       <div class="contextBody">
