@@ -1,6 +1,13 @@
 package com.fastcampus.nodemo.Controller;
 
-import com.fastcampus.nodemo.DTO.TestDTO;
+/**
+ * 
+ * !!! Deprecate File !!!
+ * !!! 사용하지 않는 파일입니다 !!!
+ * 
+ */
+
+import com.fastcampus.nodemo.DTO.boardDTO;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,7 +67,7 @@ public class ApiController {
     // Key는 고정이고, 많은 양의 파라미터를 받을 떄 사용.
     // 젤 많이 쓰임
     @GetMapping("/qparam3")
-    public String qparam3(TestDTO dto) {
+    public String qparam3(boardDTO dto) {
         return dto.toString();
 
     }
@@ -74,23 +81,23 @@ public class ApiController {
     }
 
     @PostMapping("/aopost")
-    public TestDTO aopost(@RequestBody TestDTO testDTO) {
+    public boardDTO aopost(@RequestBody boardDTO testDTO) {
         System.out.println("aopost IN");
         System.out.println("post method : " + testDTO.toString());
         return testDTO;
     }
 
-    @PostMapping("/tf")
-    public Boolean checkout(@RequestBody TestDTO testDTO) {
-        boolean result;
-        System.out.println("User ID : " + testDTO.getUserID());
-        if (testDTO.getUserID().equals("shjo03")) {
-            result = true;
-        } else {
-            result = false;
-        }
-        System.out.println(result);
-        return result;
-    }
+    // @PostMapping("/tf")
+    // public Boolean checkout(@RequestBody boardDTO testDTO) {
+    // boolean result;
+    // System.out.println("User ID : " + testDTO.getUserID());
+    // if (testDTO.getUserID().equals("shjo03")) {
+    // result = true;
+    // } else {
+    // result = false;
+    // }
+    // System.out.println(result);
+    // return result;
+    // }
 
 }

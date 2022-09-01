@@ -1,3 +1,10 @@
+/**
+ * 
+ * !!! Deprecate File !!!
+ * !!! 사용하지 않는 파일입니다 !!!
+ * 
+ */
+
 package com.fastcampus.nodemo.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
