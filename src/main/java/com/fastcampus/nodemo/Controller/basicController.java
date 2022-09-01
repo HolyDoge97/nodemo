@@ -1,13 +1,18 @@
 package com.fastcampus.nodemo.Controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class basicController {
 
-    @GetMapping("/vue")
+    @GetMapping("")
     public String indexControll() {
+        return "index";
+    }
+
+    @GetMapping("/returnTest")
+    public String testControll() {
         return "returnTest";
     }
 
