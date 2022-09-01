@@ -149,10 +149,10 @@
     </script>
     <body style="background-color: rgb(82, 82, 82)" );>
       <h1 id="H1_bigger" style="position: absolute; top: -90px; left: 30px">
-        😛
+        <a style="text-decoration: none" href="/">😛</a>
       </h1>
       <h3 class="with_Emoji">
-        <a href="/rtest">You're in ReturnTEST Page</a>
+        <a href="/returnTest">You're in ReturnTEST Page</a>
       </h3>
       <div class="API_Button">
         <strong>
