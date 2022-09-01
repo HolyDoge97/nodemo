@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class basicController {
 
-    @GetMapping("/rtest")
+    @GetMapping("/vue")
     public String indexControll() {
         return "returnTest";
     }
