@@ -4,9 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import com.fastcampus.nodemo.JPA.freeboard;
-// import com.fastcampus.nodemo.DTO.boardDTO;
 import com.fastcampus.nodemo.repository.boardRepo;
 import lombok.RequiredArgsConstructor;
 
@@ -29,9 +27,7 @@ public class basicController {
 
     @GetMapping("/list")
     public String showList(Model model) {
-        List<freeboard> showList = repo.findAll();
-        model.addAttribute(showList);
-        System.out.println("Done\n===========s=");
+
         return "list";
     }
 
