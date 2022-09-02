@@ -1,10 +1,7 @@
 package com.fastcampus.nodemo.Controller;
 
-import java.util.List;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.fastcampus.nodemo.JPA.freeboard;
 import com.fastcampus.nodemo.repository.boardRepo;
 import lombok.RequiredArgsConstructor;
 
