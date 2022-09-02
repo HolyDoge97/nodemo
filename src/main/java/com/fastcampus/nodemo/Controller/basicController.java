@@ -1,16 +1,13 @@
 package com.fastcampus.nodemo.Controller;
 
 import java.util.List;
-import java.util.Locale;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.fastcampus.nodemo.JPA.freeboard;
+// import com.fastcampus.nodemo.DTO.boardDTO;
 import com.fastcampus.nodemo.repository.boardRepo;
-
 import lombok.RequiredArgsConstructor;
 
 @Controller // JSON 형태 결과값을 반환해줌 (@ResponseBody가 필요없음)
@@ -29,12 +26,12 @@ public class basicController {
         return "returnTest";
     }
 
-    @ResponseBody
     @GetMapping("/list")
-    public List<freeboard> showList(Model model, Locale locale) {
+    public String showList(Model model) {
         List<freeboard> showList = repo.findAll();
         model.addAttribute(showList);
-        return showList;
+        System.out.println("Done\n============");
+        return "list";
     }
 
 }

@@ -1,4 +1,4 @@
-package com.fastcampus.nodemo.DTO_Deprecate;
+package com.fastcampus.nodemo.DTO;
 
 import java.sql.Timestamp;
 
