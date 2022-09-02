@@ -21,118 +21,60 @@
     }
 
     .Whole_Page {
-    font-size: 20px;
-    padding: 5%;
+      font-size: 20px;
+      padding: 5%;
     }
 
     .head_section {
-    width: 100%;
-    height: 20%;
-    background-color: rgb(207, 255, 239);
-    border-radius: 10px;
+      width: 88vw;
+      height: 19vh;
+      background-color: rgb(207, 255, 239);
+      border-radius: 3vw;
     }
 
     .context_1 {
-    position: relative;
-    left: 50px;
+      position: relative;
+      left: 50px;
     }
 
     .context_2 {
-    position: relative;
-    left: 50px;
+      position: relative;
+      left: 50px;
     }
 
     #H1_bigger {
-    font-size: 150px;
+      font-size: 150px;
     }
 
     .main_emoji {
-    position: absolute;
-    left: 1px;
+      position: absolute;
+      left: 1px;
     }
 
     .with_Emoji {
-    font-size: 50px;
-    position: relative;
-    left: 140px;
-    top: -160px;
-    }
-
-    #API_Button_1 {
-    font-size: 50px;
-    height: 70px;
-    width: 300px;
-    position: absolute;
-    left: 70%;
-    right: inherit;
-    top: 18%;
-    border-color: rgb(0, 204, 255);
-    border-width: thick;
-    border-radius: 10px;
-    background-color: rgb(231, 255, 250);
-    }
-
-    .popTag {
-    background-color: rgb(208, 246, 255);
-    width: 450px;
-    position: absolute;
-    left: 68%;
-    right: inherit;
-    top: 30%;
-    bottom: 34%;
-    padding: 1%;
-    margin: -20px;
-    }
-
-    #popURI {
-    font-size: 25px;
-    height: 40px;
-    width: 300px;
-    position: relative;
-    left: 30;
-    }
-
-    #popBody {
-    font-size: 25px;
-    width: 300px;
-    position: relative;
-    left: 17px;
-    height: 150px;
-    }
-
-    #popSel {
-    font-size: 25px;
-    width: 300px;
-    height: 30px;
-    position: relative;
-    left: 65px;
+      font-size: 50px;
+      position: relative;
+      left: 50vh;
+      top: -10vw;
     }
 
     .contextBody {
-    background-color: azure;
-    border-radius: 10px;
-    padding: 20px;
-    padding-bottom: 30px;
-    margin: -60px;
-    position: relative;
-    top: -70px;
-    height: 100%;
+      background-color: azure;
+      border-radius: 10px;
+      padding: 20px;
+      padding-bottom: 30px;
+      margin: -60px;
+      position: relative;
+      top: -8vh;
+      height: 95vh;
     }
 
     #footer{
-    background-color: rgb(207, 255, 239);
-    height: 155px;
-    margin: -40px;
-    border-radius: 15px;
-    position: relative;
-    }
-
-    #send_button{
-    font-size: 30px;
-    width: 300px;
-    height: 40px;
-    position: relative;
-    left: 65px;
+      background-color: rgb(207, 255, 239);
+      height: 155px;
+      margin: -40px;
+      border-radius: 15px;
+      position: relative;
     }
 
     </style>
@@ -142,25 +84,23 @@
     </script>
 
     <script>
-
-      function get(url){
+      // 비동기 방식으로 freeboard의 전체 데이터 요청
+      let url = "http://localhost:8080/data/listall"
+      function get(url, result){
         const xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.send();
         xhr.onload = () => {
         if (xhr.status === 200) { 
-          console.log(xhr.response);
-          $(event.target).parent().parent().parent().append(tagPop);
+          result = JSON.parse(xhr.response)
+          console.log(result)
+          document.querySelector("body > div > div.showList > h1").append("으아아아아앆")
+          
         } else {
-          console.log("실패")
+          console.log("Check PLZ")
         }
-      };
-    };
-
-    let url = "http://localhost:8080/data/listall"
-
-    // get(url)
-
+      }
+    }
     </script>
 
     <body style="background-color: rgb(82, 82, 82)" );>
