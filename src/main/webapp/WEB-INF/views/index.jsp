@@ -9,75 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
     <div class="head_section">&nbsp</div>
-    <style>
-    .showList{
-    font-size : 20px;
-    position: absolute;
-    background-color: rgb(170, 245, 255);
-    top: 50%;
-    height: 80vh;
-    width: 85vw;
-    padding-left: 30;
-    }
-
-    .Whole_Page {
-      font-size: 20px;
-      padding: 5%;
-    }
-
-    .head_section {
-      width: 88vw;
-      height: 19vh;
-      background-color: rgb(207, 255, 239);
-      border-radius: 3vw;
-    }
-
-    .context_1 {
-      position: relative;
-      left: 50px;
-    }
-
-    .context_2 {
-      position: relative;
-      left: 50px;
-    }
-
-    #H1_bigger {
-      font-size: 150px;
-    }
-
-    .main_emoji {
-      position: absolute;
-      left: 1px;
-    }
-
-    .with_Emoji {
-      font-size: 50px;
-      position: relative;
-      left: 50vh;
-      top: -10vw;
-    }
-
-    .contextBody {
-      background-color: azure;
-      border-radius: 10px;
-      padding: 20px;
-      padding-bottom: 30px;
-      margin: -60px;
-      position: relative;
-      top: -8vh;
-      height: 95vh;
-    }
-
-    #footer{
-      background-color: rgb(207, 255, 239);
-      height: 155px;
-      margin: -40px;
-      border-radius: 15px;
-      position: relative;
-    }
-
-    </style>
+    <link rel="stylesheet" href="main.css">
     </head>
     <script
       src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous">
@@ -92,6 +24,7 @@
         xhr.send();
         xhr.onload = () => {
         if (xhr.status === 200) { 
+
           result = JSON.parse(xhr.response)
           console.log(result)
           document.querySelector("body > div > div.showList > h1").append("으아아아아앆")
