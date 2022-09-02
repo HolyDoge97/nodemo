@@ -22,4 +22,9 @@ public class basicController {
         return "returnTest";
     }
 
+    @GetMapping("/main.css")
+    public String cssReturn() {
+        return "main.css";
+    }
+
 }
