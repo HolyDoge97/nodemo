@@ -27,7 +27,7 @@
 
           result = JSON.parse(xhr.response)
           console.log(result)
-          document.querySelector("body > div > div.showList > h1").append("으아아아아앆")
+          $(".appendPosition").append("으아아아아앆")
           
         } else {
           console.log("Check PLZ")
@@ -48,6 +48,8 @@
       </div>
       <div class="showList">
         <h1>ddddddㅋㅋ</h1>
+        <div class="appendPosition">
+        </div>
       </div>
     </body>
     <footer>
