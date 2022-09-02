@@ -84,25 +84,23 @@
     </script>
 
     <script>
-
-      function get(url){
+      // 비동기 방식으로 freeboard의 전체 데이터 요청
+      let url = "http://localhost:8080/data/listall"
+      function get(url, result){
         const xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.send();
         xhr.onload = () => {
         if (xhr.status === 200) { 
-          console.log(xhr.response);
-          $(event.target).parent().parent().parent().append(tagPop);
+          result = JSON.parse(xhr.response)
+          console.log(result)
+          document.querySelector("body > div > div.showList > h1").append("으아아아아앆")
+          
         } else {
-          console.log("실패")
+          console.log("Check PLZ")
         }
-      };
-    };
-
-    let url = "http://localhost:8080/data/listall"
-
-    // get(url)
-
+      }
+    }
     </script>
 
     <body style="background-color: rgb(82, 82, 82)" );>
