@@ -7,18 +7,25 @@ import java.sql.Timestamp;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Getter
-@Builder
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity(name = "freeboard")
-public class boardEntity {
+@Data
+@Builder
+@Entity
+public class freeboard {
+
+    public freeboard() {
+    }
+
+    public freeboard(String postMan, String postTitle, String postMain) {
+        this.postMan = postMan;
+        this.postTitle = postTitle;
+        this.postMain = postMain;
+    }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int postNum;
 
     @Column(nullable = false, unique = true, length = 30)
@@ -30,15 +37,15 @@ public class boardEntity {
     @Column(nullable = false, length = 5000)
     private String postMain;
 
+    @GeneratedValue
     @Column(nullable = false, length = 30)
     private Timestamp postTime;
 
-    @Column(nullable = false, length = 30)
+    @GeneratedValue
+    @Column(nullable = false, length = 50)
     private int postView;
 
-    public boardEntity(String postMan, String postTitle, String postMain) {
-        this.postMan = postMan;
-        this.postTitle = postTitle;
-        this.postMain = postMain;
-    }
+    @Column(nullable = false, length = 5000)
+    private String postComment;
+
 }

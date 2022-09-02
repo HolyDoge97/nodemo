@@ -1,10 +1,23 @@
 package com.fastcampus.nodemo.Controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
+import java.util.Locale;
 
-@Controller
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fastcampus.nodemo.JPA.freeboard;
+import com.fastcampus.nodemo.repository.boardRepo;
+
+import lombok.RequiredArgsConstructor;
+
+@Controller // JSON 형태 결과값을 반환해줌 (@ResponseBody가 필요없음)
+@RequiredArgsConstructor // final 객체를 Constructor Injection 해줌. (Autowired 역할)
 public class basicController {
+
+    final boardRepo repo;
 
     @GetMapping("")
     public String indexControll() {
@@ -14,6 +27,14 @@ public class basicController {
     @GetMapping("/returnTest")
     public String testControll() {
         return "returnTest";
+    }
+
+    @ResponseBody
+    @GetMapping("/list")
+    public List<freeboard> showList(Model model, Locale locale) {
+        List<freeboard> showList = repo.findAll();
+        model.addAttribute(showList);
+        return showList;
     }
 
 }

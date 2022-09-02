@@ -1,6 +1,5 @@
-package com.fastcampus.nodemo.DTO;
+package com.fastcampus.nodemo.DTO_Deprecate;
 
-/*import java.security.Timestamp;*/
 import java.sql.Timestamp;
 
 public class boardDTO {
