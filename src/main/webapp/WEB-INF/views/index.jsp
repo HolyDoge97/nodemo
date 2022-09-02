@@ -4,12 +4,12 @@
     pageEncoding="UTF-8"%>
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index Page</title>
-    <div class="head_section">&nbsp</div>
-    <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Index Page</title>
+      <div class="head_section">&nbsp</div>
     </head>
     <script
       src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous">
@@ -47,7 +47,7 @@
         <h2>[&nbsp&nbsp게시글 목록&nbsp&nbsp]</h2>
       </div>
       <div class="showList">
-        <h1>dddddd</h1>
+        <h1>ddddddㅋㅋ</h1>
       </div>
     </body>
     <footer>
