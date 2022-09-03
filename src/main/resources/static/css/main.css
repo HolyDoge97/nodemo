@@ -1,18 +1,19 @@
 @charset "utf-8";
 
 .showList{
-font-size : 20px;
-position: absolute;
-background-color: rgb(170, 245, 255);
-top: 50%;
-height: 750;
-width: 1405;
-padding-left: 30;
+    font-size: 20px;
+    position: absolute;
+    background-color: rgb(170, 245, 255);
+    top: 50%;
+    height: 85vh;
+    width: 86vw;
+    padding-left: 30;
 }
 
 .Whole_Page {
 font-size: 20px;
 padding: 5%;
+text-decoration: none;
 }
 
 .head_section {
@@ -46,6 +47,7 @@ font-size: 50px;
 position: relative;
 left: 140px;
 top: -160px;
+text-decoration: none;
 }
 
 #API_Button_1 {
