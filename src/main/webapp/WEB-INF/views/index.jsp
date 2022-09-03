@@ -49,6 +49,28 @@
       <div class="showList">
         <h1>ddddddㅋㅋ</h1>
         <div class="appendPosition">
+          <table class="listTable"> 
+            <thead>
+              <tr>
+                <th style="width:6vw;"class="listTable_shell">글번호</th>
+                <th style="width:25vw;" class="listTable_shell">제목</th>
+                <th style="width:15vw;" class="listTable_shell">작성자</th>
+                <th style="width:15vw;" class="listTable_shell">작성일</th>
+                <th style="width:6vw;"class="listTable_shell">조회수</th> 
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="listTable_shell">1</td>
+                <td class="listTable_shell">Static Title</td>
+                <td class="listTable_shell">Static Writer</td>
+                <td class="listTable_shell">YYYY-MM-DD </td>
+                <td class="listTable_shell">100</td>
+              </tr>
+            </tbody>
+
+
+          </table>
         </div>
       </div>
     </body>
