@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+.boxbox{
+    background-color: bisque;
+    display: none;
+}
+
 .showList{
     font-size: 20px;
     position: absolute;
