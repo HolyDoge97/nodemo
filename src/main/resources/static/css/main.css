@@ -27,6 +27,13 @@
     padding: 1%;
 }
 
+.listTable_shell{
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid #5a5a5a;
+    padding: 1%;
+}
+
 .Whole_Page {
 font-size: 20px;
 padding: 5%;
