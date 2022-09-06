@@ -51,7 +51,7 @@ left: 50px;
 }
 
 #H1_bigger {
-font-size: 150px;
+font-size: 120px;
 }
 
 .main_emoji {
@@ -60,10 +60,10 @@ left: 1px;
 }
 
 .with_Emoji {
-font-size: 50px;
+font-size: 40px;
 position: relative;
-left: 140px;
-top: -160px;
+left: 100px;
+top: -100px;
 text-decoration: none;
 }
 

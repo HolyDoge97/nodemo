@@ -1,7 +1,8 @@
 <div class="Whole_Page">
     <p>
     <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
+    </p>
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <head>
     <meta charset="UTF-8" />
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
     <div class="head_section">&nbsp</div>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
     </head>
     <script
@@ -39,7 +40,7 @@
     </script>
     
     <body style="background-color: rgb(226, 225, 225)" );>
-      <h1 id="H1_bigger" style="position: absolute; top: -90px; left: 30px" >
+      <h1 id="H1_bigger" style="position: absolute; top: 0%; left: 30px" >
         <a style="text-decoration: none" href="/">😛</a>
       </h1>
       <h3 class="with_Emoji">
