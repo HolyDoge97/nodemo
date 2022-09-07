@@ -24,7 +24,7 @@ public class basicController {
 
     @GetMapping("/writepage")
     public String writePage() {
-        return "writePage";
+        return "writepage";
     }
 
 }
