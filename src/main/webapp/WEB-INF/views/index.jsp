@@ -5,74 +5,91 @@ pageEncoding="UTF-8"%>
     </p>
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index Page</title>
-    <div class="head_section">&nbsp</div>
-    <link rel="stylesheet" href="/css/main.css">
+
+      <link rel="stylesheet" href="/css/main.css">
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Index Page</title>
+      <div class="head_section">&nbsp</div>
 
     </head>
     <script
       src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous">
     </script>
-  
+
     <script>
-    
-      function get(url){
+      // 비동기 방식으로 freeboard의 전체 데이터 요청
+      let url = "http://localhost:8080/data/listall"
+      function get(url, result){
         const xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.send();
         xhr.onload = () => {
         if (xhr.status === 200) { 
-          console.log("성공!")
-          console.log(xhr.response);
+
+          result = JSON.parse(xhr.response)
+          console.log(result)
+          $(".appendPosition").append("으아아아아앆")
+          
         } else {
-          console.log("실패")
+          console.log("Check PLZ")
         }
-      };
-    };
-    
-    let url = "http://localhost:8080/list"
-    
-    // get(url)
-    
-    </script>
-    
-    <body style="background-color: rgb(226, 225, 225)" );>
-      <h1 id="H1_bigger" style="position: absolute; top: 0%; left: 30px" >
-        <a style="text-decoration: none" href="/">😛</a>
-      </h1>
-      <h3 class="with_Emoji">
-        <a href="/returnTest">You're in POST LIST Page</a>
-      </h3>
-      <div class="contextBody">
-        <h2>[&nbsp&nbsp게시글 목록&nbsp&nbsp]</h2>
-      </div>
-      <div class="boxbox" id="testButton"> 
-        <p> 낄낄🤪 </p>
-        <button id="off">눌러서 닫으셈</button>
-      </div>
-
-      <button onclick="me">눌러봐😙</button>
-
-      <div class="showList">
-        <h1>asdf</h1>
-        <h1>asdf</h1>
-        <h1>asdf</h1>
-      </div>
-
-    
-    <script>
-    document.getElementById('off').addEventListener(click,function(){
-      document.getElementById('testButton').style.display='none';
-    });
-
-    function me(){
-      document.getElementById('testButton').style.display='block'
+      }
     }
     </script>
 
+
+    <body style="background-color: rgb(82, 82, 82)" );>
+      <h1 id="icon">
+
+        <a style="text-decoration: none" href="/">😛</a>
+      </h1>
+      <h3 class="with_Emoji">
+        <a href="/returnTest">혼저옵서예</a>
+      </h3>
+      <div class="contextBody">
+        <h2>[&nbsp&nbsp게시글 목록&nbsp&nbsp]</h2>
+        <button id="open">게시판 열기</button>
+      </div>
+      <div class="showList">
+        <h1>ddddddㅋㅋ</h1>
+        <div class="appendPosition">
+          <table class="listTable"> 
+            <thead>
+              <tr>
+                <th style="width:6vw;"class="listTable_shell">글번호</th>
+                <th style="width:25vw;" class="listTable_shell">제목</th>
+                <th style="width:15vw;" class="listTable_shell">작성자</th>
+                <th style="width:15vw;" class="listTable_shell">작성일</th>
+                <th style="width:6vw;"class="listTable_shell">조회수</th> 
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="listTable_shell">1</td>
+                <td class="listTable_shell">Static Title</td>
+                <td class="listTable_shell">Static Writer</td>
+                <td class="listTable_shell">YYYY-MM-DD </td>
+                <td class="listTable_shell">100</td>
+              </tr>
+            </tbody>
+
+
+          </table>
+          <button id="close">게시판 닫기</button>
+        </div>
+      </div>
+<script> 
+document.getElementById('open').addEventListener('click', function(){
+  document.getElementsByClassName('showList')[0].style.display='block';
+});
+
+document.getElementById('close').addEventListener('click',function(){
+  document.getElementsByClassName('showList')[0].style.display='none';
+});
+
+</script>
 
     </body>
     <footer>

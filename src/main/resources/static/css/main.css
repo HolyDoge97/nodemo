@@ -1,11 +1,9 @@
 @charset "utf-8";
 
-.boxbox{
-    background-color: bisque;
-    display: none;
-}
+
 
 .showList{
+    display: none;
     font-size: 20px;
     position: absolute;
     background-color: rgb(170, 245, 255);
@@ -20,6 +18,13 @@
     border: 4px solid #5a5a5a;
     border-collapse: collapse;
 }
+.listTable_shell{
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid #5a5a5a;
+    padding: 1%;
+}
+
 .listTable_shell{
     font-size: 20px;
     text-decoration: none;
@@ -50,8 +55,11 @@ position: relative;
 left: 50px;
 }
 
-#H1_bigger {
+#icon {
 font-size: 120px;
+position: absolute;
+top: -5px;
+left: auto;
 }
 
 .main_emoji {
@@ -60,10 +68,11 @@ left: 1px;
 }
 
 .with_Emoji {
+margin: 10%;
 font-size: 40px;
 position: relative;
 left: 100px;
-top: -100px;
+top: -180px;
 text-decoration: none;
 }
 
