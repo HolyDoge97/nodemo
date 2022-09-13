@@ -49,32 +49,6 @@ pageEncoding="UTF-8"%>
         <a href="/returnTest">나는 아무 생각이 없다.</a>
       </h3>
       
-<!-- 글쓰기창 https://dw3232.tistory.com/42#recentComments (여기서 긁어옴)
-  <div class="contextBody" id="board_write">
-        <h4>글을 작성하는 공간입니다.</h4>
-            <div id="write_area">
-                <form enctype="multipart/form-data" action="write_ok.php?board_id=<?echo $board_id;?>" method="post">
-                    <div id="in_title">
-                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
-                    </div>
- 
-                    <div class="wi_line"></div>
-                    <div id="in_content">
-                        <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
-                    </div>
- 
-                      <input type="file" name="SelectFile" />
- 
- 
-                    <div class="bt_se">
-                        <button type="submit">글 작성</button>
-                        <button id="out">나가기</button>
-                    </div>
-                </form>
-            </div>
-        </div> 
-
- 여기까지 글쓰기 -->
 
       <div class="contextBody">
         <h2 id="open">[&nbsp&nbsp게시글 목록&nbsp&nbsp]</h2>
@@ -82,7 +56,7 @@ pageEncoding="UTF-8"%>
       </div>
       <div id="alert-box"> 안 누르고 뭐함?</div>
       <div class="showList">
-        <h1 id="center">짜잔</h1>
+        <h1 style="text-align: center;">자유게시판</h1>
         <div class="appendPosition">
           <table class="listTable"> 
             <thead>
@@ -104,14 +78,63 @@ pageEncoding="UTF-8"%>
               </tr>
             </tbody>
 
-
           </table>
-          <button id="close">게시판 닫기</button>
-          <button id="text-open">글쓰기</button>
+          <button onclick="getUser()"
+          style="position: absolute; left:5%;">글목록</button>
+          <div id="userInfo"></div>
+
+          <button id="close" >닫기</button>
+          <button onclick="location.href='http://localhost:8080/writepage';"
+          style="position: absolute; right:5%;"> 글쓰기 </button>
         </div>
       </div>
 
 <script> 
+
+// ajax 로 get요청 날리기 ********* fetch( URL, 설정 ).then( callback함수 ).catch( callback함수 )
+
+function getUser() {
+  
+  const config = {
+          method: "get"
+        };
+
+  fetch('http://localhost:8080/data/listall', config)
+    .then((response) => {
+      // 오류를 더 세밀히 잡는 코드.
+      if(!response.ok) {
+      throw new Error('400아니면 500 오류남')
+      }
+      //응답값을 json으로 파싱
+      response.json()
+    })
+    .then((data) => {
+      //div 생성 (글번호,제목,작성자,날짜,조회수)
+      const postNum = document.createElement("div");
+      const postTitle = document.createElement("div");
+      const postMan = document.createElement("div");
+      const postTime = document.createElement("div");
+      const postView = document.createElement("div");
+
+      //만든 div의 텍스트는 = ajax로 비동기 요청한 데이터의 번호,제목...
+      postNum.textContent = data.postNum;
+      postTitle.textContent = data.postTitle;
+      postMan.textContent = data.postMan;
+      postTime.textContent = data.postTime;
+      postView.textContent = data.postView;
+
+      //생성한 div를 userInfo에 넣기
+      const userInfo = document.getElementById("userInfo");
+      userInfo.appendChild(postNum);
+      userInfo.appendChild(postTitle);
+      userInfo.appendChild(postMan);
+      userInfo.appendChild(postTime);
+      userInfo.appendChild(postView);
+    })
+      .catch((error) => {
+      console.log('Error!')
+    })
+}
 document.getElementById('open').addEventListener('click', function(){
   document.getElementsByClassName('showList')[0].style.display='block';
 });
@@ -124,6 +147,11 @@ document.getElementById('open').addEventListener('mouseout', function(){
   document.getElementById('alert-box').style.display='none';
 });
 
+// function open(a,b){
+//   document.getElementById('open').addEventListener('a', function(){
+//   document.getElementById('alert-box').style.display='b';
+//   });
+// }
 
 document.getElementById('close').addEventListener('click',function(){
   document.getElementsByClassName('showList')[0].style.display='none';

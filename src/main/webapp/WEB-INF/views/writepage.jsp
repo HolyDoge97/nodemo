@@ -39,8 +39,33 @@ pageEncoding="UTF-8"%>
     }
     </script>
 
+<!-- https://dw3232.tistory.com/42 참고사이트 -->
 
-    <body style="background-color: rgb(82, 82, 82)" );>
+<div class="contextBody" id="board_write">
+  <h4>글을 작성하는 공간입니다.</h4>
+      <div id="write_area">
+          <form enctype="multipart/form-data" action="write_ok.php?board_id=<?echo $board_id;?>" method="post">
+              <div id="in_title">
+                  <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+              </div>
+
+              <div class="wi_line"></div>
+              <div id="in_content">
+                  <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+              </div>
+
+                <input type="file" name="SelectFile" />
+
+
+              <div class="bt_se">
+                  <button type="submit">글 작성</button>
+                  <button onclick="location.href='http://localhost:8080'">나가기</button>
+              </div>
+          </form>
+      </div>
+  </div> 
+
+    <!-- <body style="background-color: rgb(82, 82, 82)" );>
       <h1 id="icon">
 
         <a style="text-decoration: none" href="/">😛</a>
@@ -88,4 +113,4 @@ pageEncoding="UTF-8"%>
       </div>
     </footer>
     </p>
-  </div>
+  </div> -->
